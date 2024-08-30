@@ -1,9 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>Hello, World!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Find peace and closure at day's end with Compline, a beautiful evening prayer service. Free daily prayers from the Book of Common Prayer.">
+    <meta name="keywords"
+        content="Compline, evening prayer, Book of Common Prayer, daily prayers, spiritual prayer, meditation, bedtime prayers, nightly prayers">
+    <meta name="author" content="Fr. Joel Turmo">
+    <meta name="facebook-domain-verification" content="o0ct0ub7nby58rhwxdh6hkmei1kb4b">
+    <meta property="og:url" content="https://praycompline.org/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Meditation at the Close of Day">
+    <meta property="og:description"
+        content="Compline is a peaceful and reflective evening prayer service found in the Book of Common Prayer.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://praycompline.org/images/pc1200x630.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <link rel="canonical" href="https://praycompline.org/">
+    <link rel="icon" type="image/x-icon" href="https://praycompline.org/images/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <title>Pray Compline</title>
+    <script>
+        (function () {
+            window.addEventListener('DOMContentLoaded', () => {
+                const buttons = document.querySelectorAll('.button');
+                if (buttons.length === 0) return; // Early return if no buttons are found
+                let maxHeight = 0;
+                let maxWidth = 0;
+
+                // Iterate through buttons to find the maximum height and width
+                buttons.forEach(button => {
+                    const buttonHeight = button.offsetHeight;
+                    const buttonWidth = button.offsetWidth;
+                    maxHeight = Math.max(maxHeight, buttonHeight); // Use Math.max for clarity
+                    maxWidth = Math.max(maxWidth, buttonWidth);
+                });
+
+                // Apply the maximum height and width to all buttons
+                buttons.forEach(button => {
+                    button.style.height = `${maxHeight}px`;
+                    button.style.width = `${maxWidth}px`;
+                });
+            });
+        })();
+    </script>
 </head>
+
 <body>
-<h1>Hello, Wonderful World!</h1>
+    <header role="banner">
+        <a href="https://praycompline.org/" class="h1-link">
+            <h1>Pray Compline</h1>
+        </a>
+    </header>
+    <main role="main">
+        <p class="padded-paragraph">Compline is a peaceful and reflective evening prayer service found in the Book of
+            Common Prayer. It marks the conclusion of the day with prayers, psalms, and scripture readings, offering a
+            moment of quiet contemplation and a sense of spiritual closure before bedtime. Compline's soothing and
+            introspective nature makes it a cherished tradition for many, providing a moment of stillness and connection
+            with the divine at the end of the day. The prayers and readings change each day of the week, to enrich your
+            nightly prayers.</p>
+        <nav role="navigation">
+            <div class="button-container">
+                <a id="prayerLink" href="#" class="button">Tonight's Compline</a>
+                <a href="share.html" class="button">Share QR Code</a>
+            </div>
+        </nav>
+    </main>
+    <footer role="contentinfo">
+        <p><em>Created from An Order for Compline,<br>
+                The Book of Common Prayer, 1979<br>
+                by Fr. Joel Turmo</em></p>
+    </footer>
+
+    <!-- Script to set today's prayer link -->
+    <script>
+        function getTodaysPrayerLink() {
+            const daysOfWeek = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+            const today = new Date().getDay();
+            const todaysPage = daysOfWeek[today] + ".html";
+            document.getElementById("prayerLink").href = todaysPage;
+        }
+        window.onload = getTodaysPrayerLink;
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TM9K6RQ47C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TM9K6RQ47C');
+    </script>
+
+    <!-- Clarity tracking code -->
+    <script>
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i + "?ref=bwt";
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "munbk0rv29");
+    </script>
 </body>
 </html>

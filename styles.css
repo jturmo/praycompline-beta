@@ -69,7 +69,7 @@ footer {
     line-height: 1.2;
 }
 
-h1,h2 {
+h1, h2 {
     font-family: 'Oswald', sans-serif;
     /* Apply Oswald to all headings */
 }
@@ -197,13 +197,14 @@ input[type="checkbox"] {
         /* Ensures text color is appropriate for print */
     }
 
-    header{
+    header {
         background-color: transparent;
         /* Remove background for print */
         color: black;
         /* Ensure text color for print */
         font-size: 16pt;
     }
+
     footer {
         background-color: transparent;
         /* Remove background for print */
