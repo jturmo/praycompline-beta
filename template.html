@@ -20,50 +20,7 @@
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
     <link rel="stylesheet" href="styles.css">
     <title>Pray Compline: Template</title>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const buttons = document.querySelectorAll('.button');
-            if (buttons.length === 0) return;
-
-            let maxHeight = 0;
-            let maxWidth = 0;
-
-            buttons.forEach(button => {
-                maxHeight = Math.max(maxHeight, button.offsetHeight);
-                maxWidth = Math.max(maxWidth, button.offsetWidth);
-            });
-
-            buttons.forEach(button => {
-                button.style.height = `${maxHeight}px`;
-                button.style.width = `${maxWidth}px`;
-            });
-
-            // Set today's prayer link
-            const daysOfWeek = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
-            const today = new Date().getDay();
-            const todaysPage = `${daysOfWeek[today]}.html`;
-            document.getElementById("prayerLink").href = todaysPage;
-        });
-    </script>
-
-    <!-- Google Tag Manager -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TM9K6RQ47C"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-TM9K6RQ47C');
-    </script>
-
-    <!-- Clarity tracking code -->
-    <script>
-        (function (c, l, a, r, i, t, y) {
-            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i + "?ref=bwt";
-            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-        })(window, document, "clarity", "script", "munbk0rv29");
-    </script>
+    <script src="scripts.js" async></script>
 </head>
 
 <body>
