@@ -36,6 +36,11 @@
                 maxWidth = Math.max(maxWidth, button.offsetWidth);
             });
 
+            buttons.forEach(button => {
+                button.style.height = `${maxHeight}px`;
+                button.style.width = `${maxWidth}px`;
+            });
+        });
     </script>
 
     <!-- Google Tag Manager -->
