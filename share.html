@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Find peace and closure at day's end with Compline, a beautiful evening prayer service. Free daily prayers from the Book of Common Prayer.">
+    <meta name="keywords"
+        content="Compline, evening prayer, Book of Common Prayer, daily prayers, spiritual prayer, meditation, bedtime prayers, nightly prayers">
+    <meta name="author" content="Fr. Joel Turmo">
+    <meta property="og:url" content="https://praycompline.org/template.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Template">
+    <meta property="og:description"
+        content="Template Compline is a peaceful and reflective evening prayer service found in the Book of Common Prayer.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://praycompline.org/images/pc1200x630.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <link rel="canonical" href="https://praycompline.org/template.html">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <title>Pray Compline: Template</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.button');
+            if (buttons.length === 0) return;
+
+            let maxHeight = 0;
+            let maxWidth = 0;
+
+            buttons.forEach(button => {
+                maxHeight = Math.max(maxHeight, button.offsetHeight);
+                maxWidth = Math.max(maxWidth, button.offsetWidth);
+            });
+
+            buttons.forEach(button => {
+                button.style.height = `${maxHeight}px`;
+                button.style.width = `${maxWidth}px`;
+            });
+
+            // Set today's prayer link
+            const daysOfWeek = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+            const today = new Date().getDay();
+            const todaysPage = `${daysOfWeek[today]}.html`;
+            document.getElementById("prayerLink").href = todaysPage;
+        });
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TM9K6RQ47C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TM9K6RQ47C');
+    </script>
+
+    <!-- Clarity tracking code -->
+    <script>
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i + "?ref=bwt";
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "munbk0rv29");
+    </script>
+</head>
+
+<body>
+    <header role="banner">
+        <a href="https://praycompline.org/" class="h1-link">
+            <h1>Pray Compline</h1>
+        </a>
+    </header>
+    <main>
+        <br>
+        <p class="center">Ask your friend to open their camera app and point it at&nbsp;the&nbsp;QR&nbsp;code.</p>
+        <img src="/images/qrcode.svg" class="padded" alt="Pray Compline QR Code" width="200" height="200"
+            style="display: block; margin: auto;">
+        <nav>
+            <div class="button-container">
+                <a id="prayerLink" href="#" class="button padded" role="button">Tonight's Compline</a>
+            </div>
+        </nav>
+    </main>
+
+    <footer role="contentinfo">
+        <p><em>Created from An Order for Compline,<br>
+                The Book of Common Prayer, 1979<br>
+                by Fr. Joel Turmo</em></p>
+    </footer>
+</body>
+
+</html>
