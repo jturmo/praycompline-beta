@@ -33,10 +33,13 @@
 
             buttons.forEach(button => {
                 maxHeight = Math.max(maxHeight, button.offsetHeight);
-                maxWidth = Math.max(maxWidth, Math.min(button.offsetWidth, 200));
+                maxWidth = Math.max(maxWidth, button.offsetWidth);
             });
 
-
+            // Ensure maxWidth does not exceed 200px
+            if (maxWidth > 200) {
+                maxWidth = 200;
+            }
             buttons.forEach(button => {
                 button.style.height = `${maxHeight}px`;
                 button.style.width = `${maxWidth}px`;
