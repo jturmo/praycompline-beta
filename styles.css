@@ -68,7 +68,8 @@ footer {
     line-height: 1.2;
 }
 
-h1, h2 {
+h1,
+h2 {
     font-family: 'Oswald', sans-serif;
     /* Apply Oswald to all headings */
 }
@@ -101,12 +102,12 @@ em {
 }
 
 .accessible {
-    display: none; 
+    display: none;
 }
 
 .padded {
-    padding: 1rem; 
-  }
+    padding: 1rem;
+}
 
 .button-container {
     display: flex;
@@ -169,7 +170,8 @@ em {
         flex-direction: column;
         align-items: center;
         padding: 1.0rem;
-        gap: 10px;    }
+        gap: 10px;
+    }
 }
 
 .allcap {
@@ -193,7 +195,9 @@ input[type="checkbox"] {
 }
 
 @media print {
-    html, body {
+
+    html,
+    body {
         margin: 1in;
         background-color: transparent;
         /* Ensures a clean print background */
