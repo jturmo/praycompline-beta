@@ -14,7 +14,7 @@ body {
     background-color: #deded7;
     /* Darker Cannoli Cream */
     min-height: 100vh;
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     /* Default font for body */
     font-size: 1.0rem;
     font-weight: 400;
@@ -88,7 +88,6 @@ h2 {
 }
 
 strong {
-    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 1.0rem;
     font-weight: 500;
 }
@@ -121,7 +120,6 @@ em {
 }
 
 .button {
-    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-color: #0F4C81;
     /* Classic Blue */
     border: none;
@@ -190,8 +188,6 @@ em {
 
 input[type="checkbox"] {
     display: inline;
-    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 1rem;
 }
 
 @media print {
