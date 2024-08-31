@@ -36,17 +36,6 @@
                 maxWidth = Math.max(maxWidth, button.offsetWidth);
             });
 
-            buttons.forEach(button => {
-                button.style.height = `${maxHeight}px`;
-                button.style.width = `${maxWidth}px`;
-            });
-
-            // Set today's prayer link
-            const daysOfWeek = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
-            const today = new Date().getDay();
-            const todaysPage = `${daysOfWeek[today]}.html`;
-            document.getElementById("prayerLink").href = todaysPage;
-        });
     </script>
 
     <!-- Google Tag Manager -->
