@@ -36,6 +36,9 @@
                 maxWidth = Math.max(maxWidth, button.offsetWidth);
             });
 
+            // Enforce the maximum width of 200 pixels
+            maxWidth = Math.min(maxWidth, 200);
+
             buttons.forEach(button => {
                 button.style.height = `${maxHeight}px`;
                 button.style.width = `${maxWidth}px`;
