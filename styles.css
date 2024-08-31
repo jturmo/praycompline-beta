@@ -4,7 +4,6 @@
 html {
     overflow-y: scroll;
     font-size: 100%;
-    /* Base font size (e.g., 16px) */
 }
 
 body {
@@ -32,7 +31,7 @@ header {
     color: #F1F0E2;
     /* Cannoli Cream */
     text-align: center;
-    padding: 10px 0;
+    padding: 1rem 0;
 }
 
 header h1:hover {
