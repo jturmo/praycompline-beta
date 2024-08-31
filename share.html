@@ -36,10 +36,6 @@
                 maxWidth = Math.max(maxWidth, button.offsetWidth);
             });
 
-            // Ensure maxWidth does not exceed 200px
-            if (maxWidth > 200) {
-                maxWidth = 200;
-            }
             buttons.forEach(button => {
                 button.style.height = `${maxHeight}px`;
                 button.style.width = `${maxWidth}px`;
@@ -79,7 +75,8 @@
         </a>
     </header>
     <main>
-        <p class="center">Ask your friend to open their camera app and&nbsp;point&nbsp;it&nbsp;at&nbsp;the&nbsp;QR&nbsp;code.</p>
+        <p class="center">Ask your friend to open their camera app
+            and&nbsp;point&nbsp;it&nbsp;at&nbsp;the&nbsp;QR&nbsp;code.</p>
         <img src="/images/QRcodeTrans.svg" class="padded" alt="Pray Compline QR Code" width="200" height="200"
             style="display: block; margin: auto;">
         <nav>
