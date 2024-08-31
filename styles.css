@@ -140,7 +140,7 @@ em {
     /* Smooth transition */
     flex: 1;
     /* Allow buttons to grow and shrink */
-    max-width: 100%;
+    max-width: 200px;
     /* Prevents buttons from exceeding container width */
 }
 
