@@ -16,10 +16,6 @@ body {
     min-height: 100vh;
     font-family: 'Roboto', Arial, sans-serif;
     /* Default font for body */
-}
-
-p {
-    font-family: 'Roboto', Arial, sans-serif;
     font-size: 1.0rem;
     font-weight: 400;
 }
@@ -58,12 +54,12 @@ main {
 footer {
     background-color: #0F4C81;
     /* Classic Blue */
-    color: white;
+    color: #F1F0E2;
+    /* Cannoli Cream */
     text-align: center;
-    padding: 1rem 0;
+    padding: 1.1rem 0;
     font-size: 0.9rem;
     font-family: 'Oswald', sans-serif;
-    /* Ensures Oswald is used in footer */
     font-weight: 700;
     line-height: 1.2;
 }
