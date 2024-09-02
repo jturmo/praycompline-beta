@@ -132,6 +132,7 @@ em {
     /* Adds space between buttons */
     flex-wrap: wrap;
     /* Allows buttons to wrap on smaller screens */
+    font-family: 'Cardo', 'Georgia', Times, serif;
 }
 
 .button {
@@ -146,7 +147,7 @@ em {
     /*Center text vertically*/
     justify-content: center;
     /*Center text horizontally*/
-    font-family: 'Cardo', system-ui, 'Segoe UI', Helvetica, sans-serif;
+    font-family: 'Cardo', 'Georgia', Times, serif;
     font-size: 1.0rem;
     cursor: pointer;
     border-radius: 12px;
