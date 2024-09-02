@@ -127,7 +127,7 @@ em {
   text-align: center;
   text-decoration: none;
   display: inline-flex;
-  /*Useinline-flextoenableflexproperties*/align-items: center;
+  align-items: center;
   /*Centertextvertically*/justify-content: center;
   /*Centertexthorizontally*/font-size: 0.9rem;
   cursor: pointer;
@@ -136,13 +136,15 @@ em {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   transition: background-color 0.3s, box-shadow 0.3s;
   /*Smoothtransition*/flex: 1;
-  /*Allowbuttonstogrowandshrink*/
-  max-width: 200px;
-  /* Prevents buttons from exceeding container width */
-  -webkit-transition: background-color 0.3s, box-shadow 0.3s;
+  /*Allowbuttonstogrowandshrink*/max-width: 200px;
+  /*Preventsbuttonsfromexceedingcontainerwidth*/-webkit-transition: background-color 0.3s, box-shadow 0.3s;
   -moz-transition: background-color 0.3s, box-shadow 0.3s;
   -ms-transition: background-color 0.3s, box-shadow 0.3s;
   -o-transition: background-color 0.3s, box-shadow 0.3s;
+  -webkit-border-radius:;
+  -moz-border-radius:;
+  -ms-border-radius:;
+  -o-border-radius:;
 }
 
 .button:hover {
@@ -166,6 +168,7 @@ em {
   .button {
     flex-direction: column;
     align-items: center;
+    font-size: 1rem;
     padding: 1rem;
     gap: 10px;
   }
