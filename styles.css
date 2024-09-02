@@ -133,7 +133,7 @@ em {
   /* Center text vertically */
   justify-content: center;
   /* Center text horizontally */
-  font-size: 1rem;
+  font-size: 0.9rem;
   cursor: pointer;
   border-radius: 12px;
   width: auto;
