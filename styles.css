@@ -85,9 +85,9 @@ h1 {
 }
 
 h2 {
-    font-size: 1.2rem;
-    font-weight: 500;
-    padding-top: 0.5rem;}
+    font-size: 1rem;
+    font-weight: 400;
+    padding-top: 1.0rem;}
 
 }
 
@@ -140,16 +140,20 @@ em {
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    /*Centertextvertically*/justify-content: center;
-    /*Centertexthorizontally*/font-family: 'Cardo', 'Georgia', Times, serif;
+    /*Center text vertically*/
+    justify-content: center;
+    /*Center text horizontally*/
+    font-family: 'Cardo', 'Georgia', Times, serif;
     font-size: 1.0rem;
     cursor: pointer;
     border-radius: 12px;
     width: auto;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s, box-shadow 0.3s;
-    /*Smooth transition*/flex: 1;
-    /*Allow buttons to grow and shrink*/max-width: 200px;
+    /*Smooth transition*/
+    flex: 1;
+    /*Allow buttons to grow and shrink*/
+    max-width: 200px;
     /*Prevents buttons from being too wide*/
     -webkit-transition: background-color 0.3s, box-shadow 0.3s;
     -moz-transition: background-color 0.3s, box-shadow 0.3s;
