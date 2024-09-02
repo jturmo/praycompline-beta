@@ -107,10 +107,6 @@ em {
     font-style: italic; 
 }
 
-.em-1rem {
-    font-size: 1.0rem;
-}
-
 .accessible {
     display: none;
 }
