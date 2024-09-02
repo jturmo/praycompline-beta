@@ -1,3 +1,4 @@
+/* Import Google's  Roboto and Oswald fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
 
@@ -14,14 +15,14 @@ body {
     background-color: #deded7;
     /* Darker Cannoli Cream */
     min-height: 100vh;
-    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     /* Default font for body */
     font-size: 1.0rem;
     font-weight: 400;
 }
 
 header {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Oswald', system-ui, 'Segoe UI', Helvetica, sans-serif;
     background-color: #0F4C81;
     /* Classic Blue */
     color: #F1F0E2;
@@ -59,14 +60,14 @@ footer {
     text-align: center;
     padding: 1.1rem 0;
     font-size: 0.9rem;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Oswald', system-ui, 'Segoe UI', Helvetica, sans-serif;
     font-weight: 400;
     line-height: 1.2;
 }
 
 h1,
 h2 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Oswald', system-ui, 'Segoe UI', Helvetica, sans-serif;
     /* Apply Oswald to all headings */
 }
 
@@ -105,7 +106,7 @@ em {
 }
 
 .paddedBottom {
-    padding: 1rem 1rem 4rem  1rem;
+    padding: 1rem 1rem 4rem 1rem;
 }
 
 .button-container {
@@ -137,7 +138,8 @@ em {
     transition: background-color 0.3s, box-shadow 0.3s;
     /*Smoothtransition*/flex: 1;
     /*Allowbuttonstogrowandshrink*/max-width: 200px;
-    /*Preventsbuttonsfromexceedingcontainerwidth*/-webkit-transition: background-color 0.3s, box-shadow 0.3s;
+    /*Preventsbuttonsfromexceedingcontainerwidth*/
+    -webkit-transition: background-color 0.3s, box-shadow 0.3s;
     -moz-transition: background-color 0.3s, box-shadow 0.3s;
     -ms-transition: background-color 0.3s, box-shadow 0.3s;
     -o-transition: background-color 0.3s, box-shadow 0.3s;
