@@ -77,8 +77,6 @@ footer {
 h1,
 h2 {
     font-family: 'Cardo', 'Georgia', Times, serif;
-    /* Apply Cardo to headings */
-}
 
 h1 {
     color: white;
@@ -88,7 +86,9 @@ h1 {
 
 h2 {
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: 500;
+    padding-top: 0.5rem;}
+
 }
 
 .h1-link {
@@ -115,7 +115,7 @@ em {
     padding: 1rem;
 }
 
-.padded-bottom {
+.qrcode-margin {
     padding: 1rem 1rem 4rem 1rem;
 }
 
