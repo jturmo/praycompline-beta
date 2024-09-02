@@ -24,7 +24,6 @@ body {
 }
 
 header {
-    font-family: 'Cardo', system-ui, 'Segoe UI', Helvetica, sans-serif;
     background-color: #0F4C81;
     /* Classic Blue */
     color: #F1F0E2;
@@ -135,6 +134,7 @@ em {
     /*Center text vertically*/
     justify-content: center;
     /*Center text horizontally*/
+    font-family: 'Cardo', system-ui, 'Segoe UI', Helvetica, sans-serif;
     font-size: 1.0rem;
     cursor: pointer;
     border-radius: 12px;
