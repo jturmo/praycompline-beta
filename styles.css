@@ -121,29 +121,29 @@ em {
 
 .button {
     background-color: #0F4C81;
-    /* Classic Blue */
-    border: none;
+    /*ClassicBlue*/border: none;
     color: white;
     padding: 0.5rem;
     text-align: center;
     text-decoration: none;
     display: inline-flex;
-    /* Use inline-flex to enable flex properties */
-    align-items: center;
-    /* Center text vertically */
-    justify-content: center;
-    /* Center text horizontally */
-    font-size: 1.0rem;
+    /*Useinline-flextoenableflexproperties*/align-items: center;
+    /*Centertextvertically*/justify-content: center;
+    /*Centertexthorizontally*/font-size: 1.0rem;
     cursor: pointer;
     border-radius: 12px;
     width: auto;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s, box-shadow 0.3s;
-    /* Smooth transition */
+    /*Smoothtransition*/
     flex: 1;
-    /* Allow buttons to grow and shrink */
+    /*Allowbuttonstogrowandshrink*/
     max-width: 200px;
     /* Prevents buttons from exceeding container width */
+    -webkit-transition: background-color 0.3s, box-shadow 0.3s;
+    -moz-transition: background-color 0.3s, box-shadow 0.3s;
+    -ms-transition: background-color 0.3s, box-shadow 0.3s;
+    -o-transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .button:hover {
