@@ -137,7 +137,8 @@ em {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s, box-shadow 0.3s;
     /*Smoothtransition*/flex: 1;
-    /*Allowbuttonstogrowandshrink*/max-width: 200px;
+    /*Allowbuttonstogrowandshrink*/
+    max-width: 200px;
     /*Preventsbuttonsfromexceedingcontainerwidth*/
     -webkit-transition: background-color 0.3s, box-shadow 0.3s;
     -moz-transition: background-color 0.3s, box-shadow 0.3s;
