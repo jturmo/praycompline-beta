@@ -1,7 +1,7 @@
 /* 
 * Main stylesheet for praycompline.org
 * Author: Fr. Joel Turmo
-* Date: 2024-09-01 
+* Date: 2024-09-02 
 */
 
 html {
@@ -140,10 +140,8 @@ em {
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    /*Center text vertically*/
-    justify-content: center;
-    /*Center text horizontally*/
-    font-family: 'Cardo', 'Georgia', Times, serif;
+    /*Centertextvertically*/justify-content: center;
+    /*Centertexthorizontally*/font-family: 'Cardo', 'Georgia', Times, serif;
     font-size: 1.0rem;
     cursor: pointer;
     border-radius: 12px;
@@ -151,14 +149,16 @@ em {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s, box-shadow 0.3s;
     /*Smooth transition*/flex: 1;
-    /*Allow buttons to grow and shrink*/
-    max-width: 200px;
+    /*Allow buttons to grow and shrink*/max-width: 200px;
     /*Prevents buttons from being too wide*/
     -webkit-transition: background-color 0.3s, box-shadow 0.3s;
     -moz-transition: background-color 0.3s, box-shadow 0.3s;
     -ms-transition: background-color 0.3s, box-shadow 0.3s;
     -o-transition: background-color 0.3s, box-shadow 0.3s;
-    -webkit-transition: background-color 0.3s, box-shadow 0.3s;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
 }
 
 .button:hover {
