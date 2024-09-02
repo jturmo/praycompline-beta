@@ -1,6 +1,8 @@
-/* Import Google's  Roboto and Oswald fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+/* 
+* Main stylesheet for praycompline.org
+* Author: Fr. Joel Turmo
+* Date: 2024-09-01 
+*/
 
 html {
     overflow-y: scroll;
@@ -128,18 +130,20 @@ em {
     text-align: center;
     text-decoration: none;
     display: inline-flex;
-    /*Useinline-flextoenableflexproperties*/align-items: center;
-    /*Centertextvertically*/justify-content: center;
-    /*Centertexthorizontally*/font-size: 1.0rem;
+    align-items: center;
+    /*Center text vertically*/
+    justify-content: center;
+    /*Center text horizontally*/
+    font-size: 1.0rem;
     cursor: pointer;
     border-radius: 12px;
     width: auto;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s, box-shadow 0.3s;
-    /*Smoothtransition*/flex: 1;
-    /*Allowbuttonstogrowandshrink*/
+    /*Smooth transition*/flex: 1;
+    /*Allow buttons to grow and shrink*/
     max-width: 200px;
-    /*Preventsbuttonsfromexceedingcontainerwidth*/
+    /*Prevents buttons from being too wide*/
     -webkit-transition: background-color 0.3s, box-shadow 0.3s;
     -moz-transition: background-color 0.3s, box-shadow 0.3s;
     -ms-transition: background-color 0.3s, box-shadow 0.3s;
