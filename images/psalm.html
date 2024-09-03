@@ -6,7 +6,6 @@
 #psalm-content {
   max-height: 4.5em; /* Adjust as needed for 3 lines */
   overflow: hidden;
-  line-height: 1.5; /* Or your desired line-height */
   font-size: 1rem; 
 }
 #psalm-content.expanded {
@@ -16,6 +15,11 @@
   color: blue;
   cursor: pointer;
   font-size: 1rem; 
+}
+/* Add this to maintain consistent line-height */
+#psalm-content,
+#psalm-content.expanded {
+    line-height: 1.2; /* Or your preferred value */
 }
 </style>
 </head>
