@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Psalm Example</title>
+<style>
+#psalm-content {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Show only 3 lines initially */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+#toggle-link {
+  color: blue;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h1>Psalm 23</h1>
+
+<div id="psalm-content">
+  The Lord is my shepherd; I shall not want.<br>
+  He makes me lie down in green pastures.<br>
+  He leads me beside still waters.<br>
+  He restores my soul.<br>
+  He leads me in paths of righteousness for his name's sake.<br>
+  Even though I walk through the valley of the shadow of death,<br>
+  I will fear no evil, for you are with me;<br>
+  your rod and your staff, they comfort me.<br>
+  You prepare a table before me in the presence of my enemies;<br>
+  you anoint my head with oil; my cup overflows.<br>
+  Surely goodness and mercy shall follow me all the days of my life,<br>
+  and I shall dwell in the house of the Lord forever.
+</div>
+
+<span id="toggle-link" onclick="togglePsalm()">Read More</span>
+
+<script>
+function togglePsalm() {
+  var content = document.getElementById("psalm-content");
+  var link = document.getElementById("toggle-link");
+  if (content.style.webkitLineClamp === "3") {
+    content.style.webkitLineClamp = "none"; 
+    link.innerHTML = "Show Less";
+  } else {
+    content.style.webkitLineClamp = "3"; 
+    link.innerHTML = "Read More";
+  }
+}
+</script>
+
+</body>
+</html>
