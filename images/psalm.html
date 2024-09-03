@@ -4,9 +4,10 @@
 <title>Psalm Example</title>
 <style>
 #psalm-content {
-  max-height: 4.5em; /* Adjust as needed for 3 lines */
+  max-height: 3em; /* Adjust as needed for 3 lines */
   overflow: hidden;
   font-size: 1rem; 
+  line-height: 1.2em; /* Use em units for line-height */
 }
 #psalm-content.expanded {
   max-height: none;
@@ -15,11 +16,6 @@
   color: blue;
   cursor: pointer;
   font-size: 1rem; 
-}
-/* Add this to maintain consistent line-height */
-#psalm-content,
-#psalm-content.expanded {
-    line-height: 1.2; /* Or your preferred value */
 }
 </style>
 </head>
@@ -59,3 +55,4 @@ function togglePsalm() {
 
 </body>
 </html>
+
