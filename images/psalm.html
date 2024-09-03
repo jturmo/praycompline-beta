@@ -4,10 +4,11 @@
 <title>Psalm Example</title>
 <style>
 #psalm-content {
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* Show only 3 lines initially */
-  -webkit-box-orient: vertical;
+  max-height: 4.5em; /* Adjust as needed for 3 lines */
   overflow: hidden;
+}
+#psalm-content.expanded {
+  max-height: none;
 }
 #toggle-link {
   color: blue;
@@ -40,11 +41,10 @@
 function togglePsalm() {
   var content = document.getElementById("psalm-content");
   var link = document.getElementById("toggle-link");
-  if (content.style.webkitLineClamp === "3") {
-    content.style.webkitLineClamp = "none"; 
+  content.classList.toggle("expanded"); 
+  if (content.classList.contains("expanded")) {
     link.innerHTML = "Show Less";
   } else {
-    content.style.webkitLineClamp = "3"; 
     link.innerHTML = "Read More";
   }
 }
