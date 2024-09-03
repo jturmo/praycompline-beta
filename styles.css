@@ -1,7 +1,7 @@
-/* 
+/*
 * Main stylesheet for praycompline.org
 * Author: Fr. Joel Turmo
-* Date: 2024-09-02 
+* Date: 2024-09-02
 */
 
 html {
@@ -133,7 +133,8 @@ em {
 
 .button {
     background-color: #0F4C81;
-    /*ClassicBlue*/border: none;
+    /*ClassicBlue*/
+    border: none;
     color: white;
     padding: 0.5rem;
     text-align: center;
