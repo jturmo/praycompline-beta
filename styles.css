@@ -60,6 +60,9 @@ main {
     background-color: #F1F0E2;
     /* Cannoli Cream */
 }
+section {
+    padding-top: 20px;
+}
 
 footer {
     background-color: #0F4C81;
@@ -75,7 +78,8 @@ footer {
 }
 
 h1,
-h2 {
+h2,
+h3 {
     font-family: 'Cardo', 'Georgia', Times, serif;
 
 h1 {
@@ -84,7 +88,7 @@ h1 {
     font-weight: 400;
 }
 
-h2 {
+h3 {
     font-size: 1.0rem !important;
     font-weight: 400;
     padding-top: 1.0rem;}
