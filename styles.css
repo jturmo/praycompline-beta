@@ -1,7 +1,7 @@
 /*
 * Main stylesheet for praycompline.org
 * Author: Fr. Joel Turmo
-* Date: 2024-09-04
+* Date: 2024-09-07
 */
 
 html {
@@ -13,11 +13,11 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.4;
-    /* Adjust to 1.4 for readability */
     background-color: #deded7;
     /* Darker Cannoli Cream */
     min-height: 100vh;
 }
+
 p {
     font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     font-size: 1.0rem;
@@ -60,6 +60,7 @@ main {
     background-color: #F1F0E2;
     /* Cannoli Cream */
 }
+
 section {
     margin-top: 40px;
 }
@@ -77,22 +78,23 @@ footer {
     line-height: 1.2rem;
 }
 
+
+
 h1,
 h2,
 h3 {
     font-family: 'Cardo', 'Georgia', Times, serif;
+    font-weight: 400;
+}
 
 h1 {
     color: white;
     font-size: 2rem;
-    font-weight: 400;
 }
 
 h3 {
-    font-size: 1.0rem !important;
-    font-weight: 400;
-    padding-top: 1.0rem;}
-
+    font-size: 1.0rem;
+    padding-top: 1.0rem;
 }
 
 .h1-link {
@@ -108,7 +110,7 @@ strong {
 
 em {
     font-size: 0.9rem;
-    font-style: italic; 
+    font-style: italic;
 }
 
 .accessible {
@@ -121,6 +123,12 @@ em {
 
 .qrcode-margin {
     padding: 1rem 1rem 4rem 1rem;
+}
+
+.notlent,
+.easter {
+    display: none;
+    /* Initially hide both sections */
 }
 
 .button-container {
