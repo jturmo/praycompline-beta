@@ -136,6 +136,10 @@ em {
     /* Initially hide both sections */
 }
 
+.notInRange {
+    display: none;
+}
+
 .button-container {
     display: flex;
     justify-content: center;

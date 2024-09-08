@@ -70,15 +70,12 @@
       y.parentNode.insertBefore(t, y);
     })(window, document, "clarity", "script", "munbk0rv29");
   </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@0,400;0,500;1,400&display=swap"
-    />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@0,400;0,500;1,400&display=swap" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;500;display=swap" rel="stylesheet">
-  </head>
+  <link href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;500;display=swap" rel="stylesheet">
+</head>
 
 <body>
   <header>
@@ -144,6 +141,11 @@
         <em>Officiant and People:</em><br />
         <strong>Glory to the Father, and to the Son, and to the Holy Spirit: as it
           was in the beginning, is now, and will be for ever. Amen.</strong>
+      </p>
+
+      <p> class="notInRange"
+        <em>Except in Lent, add</em>
+        <strong>Alleluia.</strong>
       </p>
 
       <p class="notlent">
@@ -325,6 +327,11 @@
           watch with Christ, and asleep we may rest in peace.</strong>
       </p>
 
+      <p> class="notInRange"
+        <em>In Easter Season, add</em>
+        <strong>Alleluia, alleluia, alleluia.</strong>
+      </p>
+
       <p class="easter">
         <strong>Alleluia, alleluia, alleluia.</strong>
       </p>
@@ -345,6 +352,11 @@
         <em>All repeat the Antiphon</em><br />
         <strong>Guide us waking, O Lord, and guard us sleeping; that awake we may
           watch with Christ, and asleep we may rest in peace.</strong>
+      </p>
+
+      <p> class="notInRange"
+        <em>In Easter Season, add</em>
+        <strong>Alleluia, alleluia, alleluia.</strong>
       </p>
 
       <p class="easter">
@@ -526,7 +538,10 @@
 
         if (!currentSeason) {
           console.error('Year not supported:', year);
+          $('.notInRange').show();  // Show .notInRange when the year is not found
           return;
+        } else {
+          $('.notInRange').hide();  // Hide .notInRange if the year is found
         }
 
         // Show .notlent ONLY when the date is NOT within Lent (including lentStart and lentEnd)
