@@ -521,7 +521,7 @@
           return;
         }
 
-        // Show .notlent ONLY when NOT within Lent (including lentStart and lentEnd)
+        // Show .notlent ONLY when the date is NOT within Lent (including lentStart and lentEnd)
         if (currentDate < currentSeason.lentStart || currentDate > currentSeason.lentEnd) {
           $('.notlent').show();
         } else {

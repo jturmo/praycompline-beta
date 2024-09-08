@@ -116,6 +116,10 @@ em {
     display: none;
 }
 
+.hidden {
+    display: none;
+}
+
 .padded {
     padding: 1rem;
 }
