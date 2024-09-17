@@ -1,10 +1,9 @@
 /*
 * Main stylesheet for praycompline.org
 * Author: Fr. Joel Turmo
-* Date: 2024-09-16
+* Date: 2024-09-07
 */
 
-/* Base Styles */
 html {
     overflow-y: scroll;
     font-size: 100%;
@@ -19,47 +18,39 @@ body {
     min-height: 100vh;
 }
 
-/* Typography */
-
 p {
-    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-
-h1,
-h2,
-h3,
-.button,
-footer {
-    font-family: 'Cardo', 'Georgia', 'Times New Roman', Times, serif;
-}
-
-h1 {
-    color: white;
-    font-size: 2rem;
+    font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.0rem;
     font-weight: 400;
 }
 
-h2,
-h3 {
-    font-weight: 500;
-}
-
-h3 {
-    font-size: 1.2rem !important;
-}
-
-strong {
+nav {
+    font-family: 'Cardo', 'Georgia', Times, serif;
+    /* Default font for body */
     font-size: 1.0rem;
-    font-weight: 500;
+    font-weight: 400;
 }
 
-em {
-    font-size: 0.9rem;
-    font-style: italic;
+header {
+    background-color: #0F4C81;
+    /* Classic Blue */
+    color: #F1F0E2;
+    /* Cannoli Cream */
+    text-align: center;
+    padding: 0.5rem 0;
 }
 
-/* Layout */
+header h1:hover {
+    color: #A5B8D0;
+    /* Cashmere Blue */
+}
+
+header a:focus-visible {
+    color: #A5B8D0;
+    /* Cashmere Blue */
+    text-decoration: underline;
+}
+
 main {
     padding: 10px 20px 30px 20px;
     max-width: 480px;
@@ -74,37 +65,82 @@ section {
     margin-top: 40px;
 }
 
-header,
 footer {
     background-color: #0F4C81;
     /* Classic Blue */
     color: #F1F0E2;
     /* Cannoli Cream */
     text-align: center;
-    padding: 0.5rem 0;
-}
-
-header h1:hover,
-header a:focus-visible {
-    color: #A5B8D0;
-    /* Cashmere Blue */
-    text-decoration: underline;
-}
-header .h1-link {
-    text-decoration: none;
-  }
-
-footer {
+    padding: 20px 0px;
     font-size: 0.9rem;
+    font-family: 'Cardo', 'Georgia', Times, serif;
+    font-weight: 400;
     line-height: 1.2rem;
+}
+
+
+
+h1,
+h2,
+h3 {
+    font-family: 'Cardo', 'Georgia', Times, serif;
+}
+
+h1 {
+    color: white;
+    font-size: 2rem;
     font-weight: 400;
 }
 
-/* Buttons */
-.button-container {
-    font-family: 'Cardo', 'Georgia', 'Times New Roman', Times, serif;
+h3 {
+    font-size: 1.2rem !important;
+    font-weight: 500;
+
+}
+
+.h1-link {
+    all: inherit;
+    color: inherit;
+    text-decoration: none;
+}
+
+strong {
     font-size: 1.0rem;
-    font-weight: 400;
+    font-weight: 500;
+}
+
+em {
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.accessible {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.padded {
+    padding: 1rem;
+}
+
+.qrcode-margin {
+    padding: 1rem 1rem 4rem 1rem;
+}
+
+.notlent,
+.easter {
+    display: none;
+    /* Initially hide both sections */
+}
+
+.notInRange {
+    display: none;
+}
+
+.button-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -113,11 +149,12 @@ footer {
     /* Adds space between buttons */
     flex-wrap: wrap;
     /* Allows buttons to wrap on smaller screens */
+    font-family: 'Cardo', 'Georgia', Times, serif;
 }
 
 .button {
     background-color: #0F4C81;
-    /* Classic Blue */
+    /*ClassicBlue*/
     border: none;
     color: white;
     padding: 0.5rem;
@@ -125,17 +162,29 @@ footer {
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    /* Center text vertically */
+    /*Center text vertically*/
     justify-content: center;
-    /* Center text horizontally */
+    /*Center text horizontally*/
+    font-family: 'Cardo', 'Georgia', Times, serif;
+    font-size: 1.0rem;
+    cursor: pointer;
     border-radius: 12px;
     width: auto;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s, box-shadow 0.3s;
-    /* Smooth transition */
+    /*Smooth transition*/
     flex: 1;
-    /* Allow buttons to grow and shrink */
+    /*Allow buttons to grow and shrink*/
     max-width: 200px;
+    /*Prevents buttons from being too wide*/
+    -webkit-transition: background-color 0.3s, box-shadow 0.3s;
+    -moz-transition: background-color 0.3s, box-shadow 0.3s;
+    -ms-transition: background-color 0.3s, box-shadow 0.3s;
+    -o-transition: background-color 0.3s, box-shadow 0.3s;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
 }
 
 .button:hover {
@@ -149,7 +198,22 @@ footer {
     outline-offset: 2px;
 }
 
-/* Utilities */
+@media (max-width: 600px) {
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .button {
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.0rem;
+        padding: 1.0rem;
+        gap: 10px;
+    }
+}
+
 .allcap {
     text-transform: uppercase;
 }
@@ -158,34 +222,16 @@ footer {
     text-align: center;
 }
 
-.hidden,
-.accessible,
-.notlent,
-.easter,
-.notInRange {
-    display: none;
-}
-
 .nospace {
     margin: 0;
     padding: 0;
     line-height: 1rem;
 }
 
-.padded {
-    padding: 1rem;
-}
-
-.qrcode-margin {
-    padding: 1rem 1rem 4rem 1rem;
-}
-
-/* Form Elements */
 input[type="checkbox"] {
     display: inline;
 }
 
-/* Print Styles */
 @media print {
 
     html,
@@ -195,6 +241,7 @@ input[type="checkbox"] {
         /* Ensures a clean print background */
         color: black;
         font-size: 12pt;
+        /* Ensures text color is appropriate for print */
     }
 
     header {
@@ -214,21 +261,4 @@ input[type="checkbox"] {
     }
 }
 
-/* Responsive Styles */
-@media (max-width: 600px) {
-    .button-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .button {
-        flex-direction: column;
-        align-items: center;
-        font-size: 1.0rem;
-        padding: 1.0rem;
-        gap: 10px;
-    }
-}
-
-/* Color scheme reference: https://www.pantone.com/articles/color-of-the-year/color-of-the-year-2020 */
+/* Color scheme https://www.pantone.com/articles/color-of-the-year/color-of-the-year-2020 */
