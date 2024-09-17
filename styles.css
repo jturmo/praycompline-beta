@@ -1,0 +1,237 @@
+/*
+* Main stylesheet for praycompline.org
+* Author: Fr. Joel Turmo
+* Date: 2024-09-07
+*/
+
+/* Base Styles */
+html {
+    overflow-y: scroll;
+    font-size: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+    background-color: #deded7;
+    /* Darker Cannoli Cream */
+    min-height: 100vh;
+}
+
+/* Typography */
+p,
+nav,
+footer,
+.button-container {
+    font-family: 'Cardo', 'Georgia', Times, serif;
+    font-size: 1.0rem;
+    font-weight: 400;
+}
+
+p {
+    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+
+h1,
+h2,
+h3,
+.button,
+footer {
+    font-family: 'Cardo', 'Georgia', 'Times New Roman', Times, serif;
+}
+
+h1 {
+    color: white;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+h2,
+h3 {
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 1.2rem !important;
+}
+
+strong {
+    font-size: 1.0rem;
+    font-weight: 500;
+}
+
+em {
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* Layout */
+main {
+    padding: 10px 20px 30px 20px;
+    max-width: 480px;
+    /* Set the maximum width */
+    margin: 0 auto;
+    /* Center the content on the page */
+    background-color: #F1F0E2;
+    /* Cannoli Cream */
+}
+
+section {
+    margin-top: 40px;
+}
+
+header,
+footer {
+    background-color: #0F4C81;
+    /* Classic Blue */
+    color: #F1F0E2;
+    /* Cannoli Cream */
+    text-align: center;
+    padding: 0.5rem 0;
+}
+
+footer {
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    padding: 20px 0;
+}
+
+/* Buttons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Center items horizontally */
+    gap: 10px;
+    /* Adds space between buttons */
+    flex-wrap: wrap;
+    /* Allows buttons to wrap on smaller screens */
+}
+
+.button {
+    background-color: #0F4C81;
+    /* Classic Blue */
+    border: none;
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    /* Center text vertically */
+    justify-content: center;
+    /* Center text horizontally */
+    border-radius: 12px;
+    width: auto;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    /* Smooth transition */
+    flex: 1;
+    /* Allow buttons to grow and shrink */
+    max-width: 200px;
+}
+
+.button:hover {
+    color: #A5B8D0;
+    /* Cashmere Blue */
+}
+
+.button:focus-visible {
+    outline: 2px solid #000000;
+    /* Black outline for better focus visibility */
+    outline-offset: 2px;
+}
+
+/* Header Link Styles */
+header h1:hover,
+header a:focus-visible {
+    color: #A5B8D0;
+    /* Cashmere Blue */
+    text-decoration: underline;
+}
+
+/* Utilities */
+.allcap {
+    text-transform: uppercase;
+}
+
+.center {
+    text-align: center;
+}
+
+.hidden,
+.accessible,
+.notlent,
+.easter,
+.notInRange {
+    display: none;
+}
+
+.nospace {
+    margin: 0;
+    padding: 0;
+    line-height: 1rem;
+}
+
+.padded {
+    padding: 1rem;
+}
+
+.qrcode-margin {
+    padding: 1rem 1rem 4rem 1rem;
+}
+
+/* Form Elements */
+input[type="checkbox"] {
+    display: inline;
+}
+
+/* Print Styles */
+@media print {
+
+    html,
+    body {
+        margin: 1in;
+        background-color: transparent;
+        /* Ensures a clean print background */
+        color: black;
+        font-size: 12pt;
+    }
+
+    header {
+        background-color: transparent;
+        /* Remove background for print */
+        color: black;
+        /* Ensure text color for print */
+        font-size: 16pt;
+    }
+
+    footer {
+        background-color: transparent;
+        /* Remove background for print */
+        color: black;
+        /* Ensure text color for print */
+        font-size: 10pt;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .button {
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.0rem;
+        padding: 1.0rem;
+        gap: 10px;
+    }
+}
+
+/* Color scheme reference: https://www.pantone.com/articles/color-of-the-year/color-of-the-year-2020 */
