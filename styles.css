@@ -156,6 +156,12 @@ header a:focus-visible {
     text-align: center;
 }
 
+.h1-link {
+    all: inherit;
+    color: inherit;
+    text-decoration: none;
+}
+
 .hidden,
 .accessible,
 .notlent,
