@@ -20,14 +20,14 @@ body {
 
 p {
     font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-    font-size: 1.0rem;
+    font-size: 1rem;
     font-weight: 400;
 }
 
 nav {
     font-family: 'Cardo', 'Georgia', 'Times New Roman', Times, serif;
     /* Default font for body */
-    font-size: 1.0rem;
+    font-size: 1rem;
     font-weight: 400;
 }
 
@@ -105,7 +105,7 @@ h3 {
 }
 
 strong {
-    font-size: 1.0rem;
+    font-size: 1rem;
     font-weight: 500;
 }
 
@@ -129,8 +129,6 @@ em {
 .easter {
     display: none;
 }
-
-
 
 .button-container {
     display: flex;
@@ -157,7 +155,7 @@ em {
     /*Center text vertically*/
     justify-content: center;
     /*Center text horizontally*/
-    font-size: 1.0rem;
+    font-size: 1rem;
     cursor: pointer;
     border-radius: 12px;
     width: auto;
@@ -191,8 +189,8 @@ em {
     .button {
         flex-direction: column;
         align-items: center;
-        font-size: 1.0rem;
-        padding: 1.0rem;
+        font-size: 1rem;
+        padding: 1rem;
         gap: 10px;
     }
 }
@@ -240,7 +238,7 @@ input[type="checkbox"] {
         /* Remove background for print */
         color: black;
         /* Ensure text color for print */
-        font-size: 10pt;
+        font-size: 12pt;
     }
 }
 
