@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-to-Speech Example</title>
+    <style>
+        /* ... (existing CSS styles) ... */
+    </style>
+</head>
+<body>
+
+    <h1>Text-to-Speech Example</h1>
+
+    <div id="controls">
+        <button id="readButton" onclick="startReading()">Start Reading Aloud</button>
+        <button id="stopButton" onclick="stopReading()" style="display: none;">Stop Reading</button>
+        <button id="continueButton" onclick="continueReading()" style="display: none;">Continue</button>
+        <button id="beginButton" onclick="startFromBeginning()" style="display: none;">Begin Again</button>
+    </div>
+
+    <div id="content">
+        <p id="text-part-1">
+            This is the first part of the text. It introduces the main characters and sets the scene. 
+            Our protagonist, Alex, is embarking on a journey into the unknown. 
+            Filled with excitement and a touch of apprehension, Alex steps into the ancient forest.
+        </p>
+
+        <p id="text-part-2">
+            And after a brief pause, we delve deeper into Alex's adventure. 
+            The forest path winds through towering trees, their leaves whispering secrets in the breeze. 
+            Sunlight filters through the canopy, casting an ethereal glow on the moss-covered ground. 
+            Alex encounters strange creatures and faces unexpected challenges, testing their courage and resilience.
+        </p>
+
+        <p id="text-part-3">
+            Finally, we conclude with the climax of Alex's journey. 
+            They reach a hidden clearing, where a majestic waterfall cascades into a crystal-clear pool. 
+            Alex discovers a hidden treasure, a symbol of their triumph over adversity. 
+            With newfound wisdom and strength, Alex emerges from the forest, forever changed by their experience.
+        </p>
+    </div>
+
+    <script>
+        const synth = window.speechSynthesis;
+        let currentUtterance = 0; 
+        let utterances = [];
+        let isPaused = false;
+        let lastSpokenCharIndex = 0; // To track progress within an utterance
+
+        function startReading() {
+            if (!synth) {
+                // Error handling: Web Speech API not supported
+                alert("Sorry, your browser doesn't support text-to-speech."); 
+                return;
+            }
+
+            document.getElementById('readButton').style.display = 'none';
+            document.getElementById('stopButton').style.display = 'inline-block';
+            document.getElementById('continueButton').style.display = 'none';
+            document.getElementById('beginButton').style.display = 'none';
+
+            utterances = [
+                new SpeechSynthesisUtterance(document.getElementById('text-part-1').innerText),
+                new SpeechSynthesisUtterance(document.getElementById('text-part-2').innerText),
+                new SpeechSynthesisUtterance(document.getElementById('text-part-3').innerText)
+            ];
+
+            // Attach onboundary event handler to track progress
+            utterances.forEach(utterance => {
+                utterance.onboundary = function(event) {
+                    if (event.name === 'word') {
+                        lastSpokenCharIndex = event.charIndex;
+                    }
+                }
+            });
+
+            isPaused = false;
+            lastSpokenCharIndex = 0; // Reset on start
+            speakCurrentUtterance();
+        }
+
+        function speakCurrentUtterance() {
+            if (currentUtterance < utterances.length && !isPaused) {
+                const utterance = utterances[currentUtterance];
+
+                // If resuming, modify the utterance to start from the last spoken position
+                if (lastSpokenCharIndex > 0) {
+                    utterance.text = utterance.text.substring(lastSpokenCharIndex);
+                    lastSpokenCharIndex = 0; // Reset after resuming
+                }
+
+                utterance.onend = function() {
+                    currentUtterance++;
+                    if (currentUtterance < utterances.length) {
+                        setTimeout(speakCurrentUtterance, 1000); 
+                    } else {
+                        resetButtons();
+                    }
+                };
+
+                // Error handling: speech synthesis error
+                utterance.onerror = function(event) {
+                    console.error('Speech synthesis error:', event.error);
+                    // You might want to display an error message to the user here
+                }
+
+                synth.speak(utterance);
+            }
+        }
+
+        function stopReading() {
+            synth.cancel();
+            isPaused = true;
+            document.getElementById('stopButton').style.display = 'none';
+            document.getElementById('continueButton').style.display = 'inline-block';
+            document.getElementById('beginButton').style.display = 'inline-block';
+        }
+
+        function continueReading() {
+            isPaused = false;
+            speakCurrentUtterance();
+            document.getElementById('continueButton').style.display = 'none';
+            document.getElementById('stopButton').style.display = 'inline-block';
+            document.getElementById('beginButton').style.display = 'none';
+        }
+
+        function startFromBeginning() {
+            stopReading();
+            currentUtterance = 0;
+            startReading();
+        }
+
+        function resetButtons() {
+            document.getElementById('readButton').style.display = 'inline-block'; 
+            document.getElementById('stopButton').style.display = 'none'; 
+            document.getElementById('continueButton').style.display = 'none'; 
+            document.getElementById('beginButton').style.display = 'none'; 
+        }
+    </script>
+
+</body>
+</html>
+
