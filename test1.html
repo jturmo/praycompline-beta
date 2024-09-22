@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-to-Speech with Pauses</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            color: #2980b9;
+        }
+
+        #content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        #controls {
+            position: sticky;
+            top: 0;
+            background-color: #fff;
+            padding: 10px;
+            text-align: center;
+            z-index: 1;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #status {
+            text-align: center;
+            margin-top: 10px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Text-to-Speech Example with Pauses</h1>
+
+    <div id="controls">
+        <button id="readButton" onclick="startReading()">Start Reading Aloud</button>
+        <button id="pauseButton" onclick="pauseReading()" style="display: none;">Pause Reading</button>
+        <button id="resumeButton" onclick="resumeReading()" style="display: none;">Resume Reading</button>
+    </div>
+
+    <div id="content">
+        <p id="text-part-1">
+            This is the first part of the text. It introduces the main characters and sets the scene. 
+            Our protagonist, Alex, is embarking on a journey into the unknown. 
+            Filled with excitement and a touch of apprehension, Alex steps into the ancient forest.
+        </p>
+
+        <p id="text-part-2">
+            And after a brief pause, we delve deeper into Alex's adventure. 
+            The forest path winds through towering trees, their leaves whispering secrets in the breeze. 
+            Sunlight filters through the canopy, casting an ethereal glow on the moss-covered ground. 
+            Alex encounters strange creatures and faces unexpected challenges, testing their courage and resilience.
+        </p>
+
+        <p id="text-part-3">
+            Finally, we conclude with the climax of Alex's journey. 
+            They reach a hidden clearing, where a majestic waterfall cascades into a crystal-clear pool. 
+            Alex discovers a hidden treasure, a symbol of their triumph over adversity. 
+            With newfound wisdom and strength, Alex emerges from the forest, forever changed by their experience.
+        </p>
+    </div>
+
+    <div id="status" aria-live="polite" role="status"></div> 
+
+    <script>
+        const synth = window.speechSynthesis;
+        let isPaused = false;
+        let currentUtterance; 
+        let utterances = [];
+
+        function startReading() {
+            if (!synth) return;
+
+            document.getElementById('readButton').style.display = 'none';
+            document.getElementById('pauseButton').style.display = 'inline-block';
+
+            // Clear previous utterances
+            utterances = [
+                new SpeechSynthesisUtterance(document.getElementById('text-part-1').innerText),
+                new SpeechSynthesisUtterance(document.getElementById('text-part-2').innerText),
+                new SpeechSynthesisUtterance(document.getElementById('text-part-3').innerText)
+            ];
+
+            currentUtterance = 0; // Start with the first utterance
+            speakCurrentUtterance();
+        }
+
+        function speakCurrentUtterance() {
+            if (currentUtterance < utterances.length) {
+                const utterance = utterances[currentUtterance];
+                utterance.onend = function() {
+                    currentUtterance++;
+                    if (!isPaused) {
+                        setTimeout(speakCurrentUtterance, 1000); // Brief pause before next
+                    }
+                };
+                synth.speak(utterance);
+            } else {
+                resetButtons();
+            }
+        }
+
+        function pauseReading() {
+            if (!synth || !synth.speaking) return;
+            synth.pause();
+            isPaused = true;
+            document.getElementById('pauseButton').style.display = 'none';
+            document.getElementById('resumeButton').style.display = 'inline-block';
+        }
+
+        function resumeReading() {
+            if (!synth || !isPaused) return;
+            synth.resume();
+            isPaused = false;
+            speakCurrentUtterance();
+            document.getElementById('pauseButton').style.display = 'inline-block';
+            document.getElementById('resumeButton').style.display = 'none';
+        }
+
+        function resetButtons() {
+            document.getElementById('readButton').style.display = 'inline-block';
+            document.getElementById('pauseButton').style.display = 'none';
+            document.getElementById('resumeButton').style.display = 'none';
+            isPaused = false;
+        }
+    </script>
+
+</body>
+</html>
